@@ -1,0 +1,38 @@
+.login{
+    height: 450px;
+}
+.header{
+    line-height: 1px;
+}
+.btn-login{
+    background-color: #7e22ce;
+    color: white;
+}
+.btn-login:hover{
+    background-color: #581c87;
+    color: white;
+}
+.link-register, .link-login{
+    color: #1d4ed8;
+    text-decoration: none;
+}
+.link-register:hover, .link-login:hover{
+    color: #1e3a8a;
+    text-decoration-line: underline;
+}
+body{
+    background-color: #f9fafb;
+}
+.register, .btn-login{
+    border:1px solid #e5e7eb;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background-color: white;
+    }
+    .login, .register{
+        border-radius: none;
+        border: none;
+    }
+}
