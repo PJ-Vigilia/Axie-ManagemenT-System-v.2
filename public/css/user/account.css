@@ -6,14 +6,14 @@
     border: 1px solid #e5e7eb;
 }
 .div-create{
-    background-color: #e2e8f0;
+    background-color: white;
 }
 .btn-add{
-    background-color: #1e40af;
+    background-color: #d97706;
     color: white;
 }
 .btn-add:hover{
-    background-color: #1e3a8a;
+    background-color: #b45309;
     color: white;
 }
 #toast{

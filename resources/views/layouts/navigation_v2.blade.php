@@ -13,7 +13,7 @@
                     <a class="link" href="{{ route('account.index') }}">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="link" href="#">Link</a>
+                    <a class="link" href="{{ route('axie.index') }}">Axie</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

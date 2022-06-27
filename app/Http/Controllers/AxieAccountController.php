@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
 
 class AxieAccountController extends Controller
 {
@@ -33,6 +34,16 @@ class AxieAccountController extends Controller
                 'accounts' => $accounts
             ]);
         }
+    }
+
+    public function fetchAccountName(){
+        $accounts = DB::table('accounts')
+                    ->where('user_id', Auth::id())
+                    ->select('name', 'id')
+                    ->get();
+        return response()->json([
+            'accounts' => $accounts
+        ]);
     }
 
     /**
