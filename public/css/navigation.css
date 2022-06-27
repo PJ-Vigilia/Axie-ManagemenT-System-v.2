@@ -1,0 +1,10 @@
+.link{
+    color: #1f2937;
+    text-decoration: none;
+}
+.link:hover{
+    color: #7c3aed;
+}
+.navigation{
+    border-bottom: 1px solid #e5e7eb;
+}

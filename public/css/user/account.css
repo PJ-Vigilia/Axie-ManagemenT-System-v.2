@@ -1,0 +1,37 @@
+.div-table{
+    height: 500px;
+    overflow-y: auto;
+}
+.content{
+    border: 1px solid #e5e7eb;
+}
+.div-create{
+    background-color: #e2e8f0;
+}
+.btn-add{
+    background-color: #1e40af;
+    color: white;
+}
+.btn-add:hover{
+    background-color: #1e3a8a;
+    color: white;
+}
+#toast{
+    display: none;
+}
+.btn-edit, .btn-delete{
+    border: none;
+    background-color: transparent;
+}
+.btn-edit{
+    color: #2563eb;
+}
+.btn-edit:hover{
+    color: black;
+}
+.btn-delete{
+    color: #ef4444;
+}
+.btn-delete:hover{
+    color: black;
+}

@@ -1,0 +1,10 @@
+.image-container{
+    height: 550px;
+    background-image:url('/images/system_images/bg1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content{
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
