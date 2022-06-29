@@ -9,11 +9,11 @@
     background-color: white;
 }
 .btn-add{
-    background-color: #d97706;
+    background-color: #9333ea;
     color: white;
 }
 .btn-add:hover{
-    background-color: #b45309;
+    background-color: #7e22ce;
     color: white;
 }
 #toast{

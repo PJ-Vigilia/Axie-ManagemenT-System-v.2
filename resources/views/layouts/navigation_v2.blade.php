@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white  navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow navigation">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{{ url('/home') }}">A.I.M.S.</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,6 +14,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="link" href="{{ route('axie.index') }}">Axie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="link" href="{{ route('slp.index') }}">SLP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="link" href="{{ route('transaction.index') }}">Transaction</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

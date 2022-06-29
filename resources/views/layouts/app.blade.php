@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navigation.css') }}" rel="stylesheet">
 </head>
-<body style="background-color:#f3f4f6">
+<body style="background-color:#e5e7eb">
     <div id="app">
         @include('layouts.navigation_v2')
 

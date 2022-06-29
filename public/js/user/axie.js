@@ -45,9 +45,11 @@ $(document).ready(function(){
                                         </svg>\
                                     </div>\
                                     <div class="axie-info w-100 px-2 text-center py-1 position-absolute bottom-0">\
+                                        <a href="/view/account/'+ item.account_id +'" class="view-account-link">\
                                         '+ item.axie_name +'<br>\
                                         '+ item.axie_type +'<br>\
                                         Account: '+ item.account_name +'\
+                                        </a>\
                                     </div>\
                                 </div>\
                             </div>\

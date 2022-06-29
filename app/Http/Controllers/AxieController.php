@@ -34,6 +34,17 @@ class AxieController extends Controller
         return response()->json(['axies' => $axies]);
     }
 
+    public function fetchAccountAxie($account_id){
+        $axies = DB::table('users')
+        ->join('accounts', 'users.id', '=', 'accounts.user_id')
+        ->join('axies', 'accounts.id', '=', 'axies.account_id')
+        ->where('accounts.id', $account_id)
+        ->select('accounts.id as account_id', 'accounts.name as account_name', 
+                'axies.id as axie_id','axies.axie_name', 'axies.axie_type', 'axies.axie_picture')
+        ->get();
+        return response()->json(['axies' => $axies]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -74,6 +85,46 @@ class AxieController extends Controller
 
                 DB::table('axies')->insert([
                     'account_id' => $request->account_name,
+                    'axie_name' => $request->axie_name,
+                    'axie_type' => $request->axie_type,
+                    'axie_picture' => $filename,
+                    'added_at' => now(),
+                ]);
+
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'A new axie added successfully',
+                ]);
+            }
+
+            
+        }
+    }
+
+    public function storeAccountAxie(Request $request)
+    {
+        if(Auth::user()->hasRole('user')){
+            $validator = Validator::make($request->all(), [
+                'axie_picture' => 'required|image',
+                'axie_name' => 'required|string',
+                'axie_type' => 'required|string',
+                'form_account_id' => 'required'
+            ]);
+            //return response()->json(['message' => 'A new axie added successfully']);
+            if($validator->fails()){
+                return response()->json([
+                    'status' => 404,
+                    'error' => $validator->errors()->toArray(),
+                ]);
+            }else{
+                $file = $request->file('axie_picture');
+                $extension = $file->getClientOriginalExtension();
+                $name = $file->getClientOriginalName(); 
+                $filename = $name . time() . '.' . $extension;
+                $file->move('images/axies/', $filename);
+
+                DB::table('axies')->insert([
+                    'account_id' => $request->form_account_id,
                     'axie_name' => $request->axie_name,
                     'axie_type' => $request->axie_type,
                     'axie_picture' => $filename,
@@ -132,6 +183,37 @@ class AxieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $axie_id)
+    {
+        if(Auth::user()->hasRole('user')){
+            $validator = Validator::make($request->all(), [
+                'axie_name' => 'required|string',
+                'axie_type' => 'required|string',
+                'account_name' => 'required'
+            ]);
+            //return response()->json(['message' => 'A new axie added successfully']);
+            if($validator->fails()){
+                return response()->json([
+                    'status' => 404,
+                    'error' => $validator->errors()->toArray(),
+                ]);
+            }else{
+                DB::table('axies')
+                ->where('id', $axie_id)
+                ->update([
+                    'account_id' => $request->account_name,
+                    'axie_name' => $request->axie_name,
+                    'axie_type' => $request->axie_type,
+                ]);
+
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'An axie updated successfully',
+                ]);
+            }
+        }
+    }
+
+    public function updateAccountAxie(Request $request, $axie_id)
     {
         if(Auth::user()->hasRole('user')){
             $validator = Validator::make($request->all(), [

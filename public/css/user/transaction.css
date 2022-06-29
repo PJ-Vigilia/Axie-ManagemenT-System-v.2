@@ -1,0 +1,56 @@
+/*left*/
+#toast{
+    display: none;
+}
+.btn-delete{
+    border: none;
+    background-color: transparent;
+}
+.view{
+    color: #2563eb;
+    text-decoration: none;
+}
+.view:hover{
+    color: black;
+    text-decoration: underline;
+}
+.btn-delete{
+    color: #ef4444;
+}
+.btn-delete:hover{
+    color: black;
+}
+
+/*right*/
+.content{
+    border: 1px solid #e5e7eb;
+}
+.div-create{
+    overflow-y: hidden;
+}
+.btn-add{
+    background-color: #9333ea;
+    color: white;
+}
+.btn-add:hover{
+    background-color: #7e22ce;
+    color: white;
+}
+.account-link{
+    text-decoration: none;
+}
+.account-link:hover{
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+.message-error{
+    display: none;
+}
+.link-add-axie{
+    display: none;
+}
+@media only screen and (max-width:600px){
+    .link-add-axie{
+        display: inline-block;
+    }
+}

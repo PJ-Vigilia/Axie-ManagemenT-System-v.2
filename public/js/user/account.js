@@ -19,6 +19,7 @@ $(document).ready(function(){
                             <td>'+ item.type +'</td>\
                             <td>'+ item.created_at +'</td>\
                             <td>\
+                                <a href="/view/account/'+ item.id +'">View</a>\
                                 <button onclick="editAccount('+ item.id +')" class="btn-edit">Edit</button>\
                                 <button onclick="deleteAccount('+ item.id +');" class="btn-delete">Delete</button>\
                             </td>\
