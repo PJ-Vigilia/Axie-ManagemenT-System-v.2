@@ -13,7 +13,7 @@ $(document).ready(function(){
                             <th scope="row">'+ item.acc_name +'</th>\
                             <td>'+ item.totalAxie +'</td>\
                             <td>'+ item.totalSLP +'</td>\
-                            <td>'+ item.totalPrice +'</td>\
+                            <td>'+ item.soldSLP +'</td>\
                         </tr>\
                     ');
                 })

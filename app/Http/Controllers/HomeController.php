@@ -41,7 +41,7 @@ class HomeController extends Controller
                     ->select('accounts.name as acc_name', 'accounts.id as acc_id',
                             DB::raw('count(distinct(axies.id)) as totalAxie'),
                             DB::raw('sum(smooth_love_potions.quantity) as totalSLP'),
-                            DB::raw('sum(transactions.price) as totalPrice'))
+                            DB::raw('sum(transactions.slp_quantity) as soldSLP'))
                     ->groupBy('acc_name', 'acc_id')
                     ->get();
             return response()->json(['home' => $home]);

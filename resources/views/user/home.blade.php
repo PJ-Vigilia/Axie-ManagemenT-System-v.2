@@ -15,8 +15,8 @@
                                     <tr>
                                     <th scope="col">Account</th>
                                     <th scope="col">Axies</th>
-                                    <th scope="col">SLP</th>
-                                    <th scope="col">Transaction</th>
+                                    <th scope="col">Total SLP</th>
+                                    <th scope="col">Sold SLP</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tbl_home_tbody">
