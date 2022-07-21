@@ -1,0 +1,75 @@
+.axie-container{
+    height: 120px;
+    border: 1px solid #e5e7eb;
+}
+.img-content{
+    background-color: transparent;
+    opacity: 0;
+}
+.img-content:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+.axie-info{
+    line-height: 1.2;
+    color: white;
+}
+
+#toast{
+    display: none;
+}
+.edit-icon{
+    color: #22c55e;
+    height: 15px;
+    width: 15px;
+}
+.delete-icon{
+    color: #ef4444;
+    height: 14px;
+    width: 15px;
+}
+.edit-icon:hover, .delete-icon:hover{
+    color: #1f2937;
+}
+.div-create{
+    background-color: white;
+    border: 1px solid #e5e7eb;
+}
+.btn-add{
+    background-color: #9333ea;
+    color: white;
+}
+.btn-add:hover{
+    background-color: #7e22ce;
+    color: white;
+}
+.account-link{
+    text-decoration: none;
+}
+.account-link:hover{
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+.img-container{
+    width: 90px;
+    height: 80px;
+    border: 1px solid #e5e7eb;
+}
+#img_add_preview{
+    display: none;
+}
+.message-error{
+    display: none;
+}
+
+.content{
+    border: 1px solid #e5e7eb;
+}
+.link-add-axie{
+    display: none;
+}
+@media only screen and (max-width:600px){
+    .link-add-axie{
+        display: inline-block;
+    }
+}

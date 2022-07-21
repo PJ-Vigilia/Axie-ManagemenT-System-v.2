@@ -89,7 +89,7 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-4 px-4 div-create py-3 rounded">                    
+            <div class="col-md-4 px-4 div-create py-3 rounded shadow">                    
                 <form action="{{ route('account.store') }}" method="post" id="form_add">                     
                     @csrf
                     <h2>Add Account</h2>
