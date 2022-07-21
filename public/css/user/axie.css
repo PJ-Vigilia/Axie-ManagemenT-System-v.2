@@ -14,7 +14,14 @@
     line-height: 1.2;
     color: white;
 }
-
+.view-account-link{
+    text-decoration: none;
+    color: white;
+}
+.view-account-link:hover{
+    text-decoration: none;
+    color: white;
+}
 #toast{
     display: none;
 }

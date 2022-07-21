@@ -1,0 +1,49 @@
+.account-info{
+    border-bottom: 2px solid gray;
+}
+.edt-icon{
+    color: #22c55e;
+}
+.dte-icon{
+    color: #dc2626;
+}
+.delete, .edit{
+    color: #4b5563;
+}
+.delete:hover, .edit:hover, .edt-icon:hover, .dte-icon:hover{
+    color: black;
+}
+#toast_axie, #toast_slp, #toast_transaction, #toast_account{
+    display: none;
+}
+.btn-add{
+    background-color: #9333ea;
+    color: white;
+}
+.btn-add:hover{
+    background-color: #7e22ce;
+    color: white;
+}
+.input-total{
+    border: 1px solid #d1d5db;
+}
+.table{
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.entity{
+    border: 1px solid #d1d5db;
+}
+
+.btn-edit{
+    color: blue;
+    text-decoration: none;
+}
+.btn-delete{
+    color: red;
+    text-decoration: none;
+}
+.btn-edit:hover, .btn-delete:hover{
+    color: black;
+}

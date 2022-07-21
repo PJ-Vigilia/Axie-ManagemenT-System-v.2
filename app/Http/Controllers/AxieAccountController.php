@@ -22,6 +22,12 @@ class AxieAccountController extends Controller
             return view('user.account');
         }
     }
+    public function account($id){
+        if(Auth::user()->hasRole('user')){
+            $account_id = $id;
+            return view('user.viewAccount', compact('account_id'));
+        }
+    }
 
     public function fetchOwnAccounts()
     {
@@ -36,14 +42,38 @@ class AxieAccountController extends Controller
         }
     }
 
+    public function fetchAccount($id){
+        if(Auth::user()->hasRole('user')){
+            $account = DB::table('accounts')
+                    ->where('id', $id)
+                    ->select('*')
+                    ->get();
+            return response()->json([
+                'account' => $account
+            ]);
+        }
+    }
+
     public function fetchAccountName(){
-        $accounts = DB::table('accounts')
+        if(Auth::user()->hasRole('user')){
+            $accounts = DB::table('accounts')
                     ->where('user_id', Auth::id())
                     ->select('name', 'id')
                     ->get();
-        return response()->json([
-            'accounts' => $accounts
-        ]);
+            return response()->json([
+                'accounts' => $accounts
+            ]);
+        }
+    }
+
+    public function fetchName($id){
+        if(Auth::user()->hasRole('user')){
+            $account =Account::find($id);
+            $name = $account->name;
+            return response()->json([
+                'name' => $name
+            ]);
+        }
     }
 
     /**
@@ -173,6 +203,24 @@ class AxieAccountController extends Controller
             return response()->json([
                 'message' => "You deleted an account successfully."
             ]);
+        }
+    }
+    public function deleteAccount(Request $request)
+    {
+        if(Auth::user()->hasRole('user')){
+            $validator = Validator::make($request->all(), [
+                'account_id' => 'required'
+            ]);
+            if($validator->fails()){
+                return response()->json([
+                    'status' => 404,
+                    'error' => $validator->errors()->toArray()
+                ]);
+            }else{
+                Account::find($request->account_id)->delete();
+                return redirect()->route('account.index');
+            }
+            
         }
     }
 }

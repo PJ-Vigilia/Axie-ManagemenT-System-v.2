@@ -1,10 +1,10 @@
-.link{
-    color: #1f2937;
+.link, .brand{
+    color: white;
     text-decoration: none;
 }
-.link:hover{
-    color: #7c3aed;
+.link:hover, .brand:hover{
+    color: #cbd5e1;
 }
 .navigation{
-    border-bottom: 1px solid #e5e7eb;
+    background-color: #1e293b;
 }

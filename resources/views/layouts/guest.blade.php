@@ -20,7 +20,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body>
+<body style="background-color:#e5e7eb">
     <div id="guest">
        @yield('content')
     </div>
